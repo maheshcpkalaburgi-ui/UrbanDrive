@@ -19,7 +19,7 @@ const vehicles = [
 ],
     
 
-        capacity: 7+1,
+        capacity: 5+1,
         price: 4500,
         priceUnit: "per day",
         transmission: "Mannual",
@@ -47,7 +47,12 @@ const vehicles = [
         id: "vehicle2",
         name: "Group Travel",
         category: "GROUP TRAVEL",
-        image: "images/fleet/force.jpeg",
+        images: [
+            "images/fleet/force.jpeg",
+    "images/force1.jpg",
+    "images/force3.jpg",
+    "images/force2.jpg"
+],
 
         capacity: 13,
 
@@ -78,7 +83,11 @@ const vehicles = [
         id: "vehicle3",
         name: "Family Travel",
         category: "FAMILY TRAVEL",
-        image: "images/fleet/etios.jpeg",
+        images:[ "images/manju.jpg",
+            "images/manju1.jpg",
+            "images/manju2.jpg",
+            "images/manju3.jpg"
+        ],
 
         capacity: 4,
         luggage: 4,
