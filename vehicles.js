@@ -222,6 +222,79 @@ const vehicles = [
             "Spacious Seating",
             "Professional Driver"
         ]
-    }
+    },
 
+    {
+        id: "vehicle7",
+        name: "Sedan Aura",
+        category: "FAMILY TRAVEL",
+        images: [
+    "images/extra-vehicle/sagar.jpg",
+    "images/extra-vehicle/sagar1.jpg",
+    "images/extra-vehicle/sagar2.jpg",
+    "images/extra-vehicle/sagar3.jpg",
+    "images/extra-vehicle/sagar4.jpg"
+],
+
+
+        capacity: 4,
+
+        price: 5500,
+        priceUnit: "per day",
+
+        transmission: "Mannnual",
+        fuel: "Diesel",
+
+        driver: {
+            name: "Sagar B Hosamani",
+            experience: 12,
+            phone: "+918722773931"
+        },
+
+        description:
+            "Discover a refined travelling experience with comfort and convenience.",
+
+        features: [
+            "Air Conditioning",
+            "Luxury Interior",
+            "Spacious Seating",
+            "Professional Driver"
+        ]
+    },
+
+    
+    {
+        id: "vehicle8",
+        name: "Sedan Aura",
+        category: "FAMILY TRAVEL",
+        images: [
+    "images/extra-vehicle/kishan.jpg",
+    "images/extra-vehicle/kishan1.jpg"
+],
+
+
+        capacity: 4,
+
+        price: 5500,
+        priceUnit: "per day",
+
+        transmission: "Mannnual",
+        fuel: "Diesel",
+
+        driver: {
+            name: "Kishan Pawar",
+            experience: 12,
+            phone: "+918722773931"
+        },
+
+        description:
+            "Discover a refined travelling experience with comfort and convenience.",
+
+        features: [
+            "Air Conditioning",
+            "Luxury Interior",
+            "Spacious Seating",
+            "Professional Driver"
+        ]
+    }
 ];
