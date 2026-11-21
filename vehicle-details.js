@@ -24,11 +24,7 @@ const extraVehicle = {
     transmission: "Manual",
     price: 5000,
     priceUnit: "per day",
-    driver: {
-        name: "DRIVER NAME HERE",
-        experience: 5,
-        phone: "+910000000000"
-    },
+   
     features: [
         "Air Conditioning",
         "Comfortable Seating",
@@ -51,7 +47,7 @@ const extraVehicle2 = {
     category: "YOUR CATEGORY HERE",
     description:
         "Write a short description of this vehicle here.",
-    capacity: 4,
+    capacity: 13,
     transmission: "Manual",
     price: 5000,
     priceUnit: "per day",
@@ -67,10 +63,10 @@ const extraVehicle2 = {
         "Professional Driver"
     ],
     images: [
-        "images/extra-vehicle-2/photo1.jpg",
-        "images/extra-vehicle-2/photo2.jpg",
-        "images/extra-vehicle-2/photo3.jpg",
-        "images/extra-vehicle-2/photo4.jpg"
+        "images/extra-vehicle/photo5.jpg",
+        "images/extra-vehicle/photo6.jpg",
+        "images/extra-vehicle/photo7.jpg"
+        
     ]
 };
 
@@ -82,7 +78,7 @@ const extraVehicleForVehicle5 = {
     category: "YOUR CATEGORY HERE",
     description:
         "Write a short description of this vehicle here.",
-    capacity: 4,
+    capacity: 12,
     transmission: "Manual",
     price: 5000,
     priceUnit: "per day",
@@ -102,6 +98,35 @@ const extraVehicleForVehicle5 = {
         "images/amrut5.jpg",
         "images/amrut6.jpg",
         "images/amrut7.jpg"
+    ]
+};
+
+const extraVehicleForVehicle5B = {
+    id: "extra-vehicle-v5-b",
+    name: "YOUR VEHICLE NAME HERE",
+    category: "YOUR CATEGORY HERE",
+    description:
+        "Write a short description of this vehicle here.",
+    capacity: 12,
+    transmission: "Manual",
+    price: 5000,
+    priceUnit: "per day",
+    driver: {
+        name: "DRIVER NAME HERE",
+        experience: 5,
+        phone: "+910000000000"
+    },
+    features: [
+        "Air Conditioning",
+        "Comfortable Seating",
+        "Luggage Space",
+        "Professional Driver"
+    ],
+    images: [
+        "images/extra-vehicle/amrut10.jpg",
+        "images/extra-vehicle/amrut8.jpg",
+        "images/extra-vehicle/amrut9.jpg",
+        "images/extra-vehicle/amrut11.jpg"
     ]
 };
 
@@ -281,6 +306,11 @@ if (!vehicle) {
              followed by its own specs/price, right after vehicle5's own -->
 
         ${vehicle.id === "vehicle5" ? renderVehicleBlock(extraVehicleForVehicle5) : ""}
+
+        <!-- VEHICLE5-ONLY SECOND EXTRA VEHICLE: another separate gallery +
+     details, right after the first extra vehicle's block -->
+
+${vehicle.id === "vehicle5" ? renderVehicleBlock(extraVehicleForVehicle5B) : ""}
 
         <!-- DRIVER, FEATURES & BOOKING — shown once, after everything above -->
 
