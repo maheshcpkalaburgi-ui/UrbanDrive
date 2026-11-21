@@ -1,0 +1,1491 @@
+
+/* ==========================
+   GLOBAL SETTINGS
+========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #080808;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+}
+
+:root {
+    --gold: #D6B45C;
+    --black: #080808;
+    --dark: #151515;
+    --grey: #aaaaaa;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* ==========================
+   NAVIGATION
+========================== */
+
+.navbar {
+    height: 75px;
+    padding: 0 5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(8, 8, 8, 0.97);
+
+    border-bottom: 1px solid #282828;
+
+    position: relative;
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.logo-main {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--gold);
+}
+
+.logo-main span {
+    color: white;
+}
+
+.logo-sub {
+    font-size: 8px;
+    letter-spacing: 2px;
+    color: #999;
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+}
+
+.nav-links a {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #cccccc;
+    transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--gold);
+}
+
+.reserve-btn {
+    border: 1px solid var(--gold);
+    padding: 13px 20px;
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+.reserve-btn:hover {
+    background: var(--gold);
+    color: #000;
+}
+
+.menu-toggle {
+    display: none;
+    color: var(--gold);
+    background: none;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+
+/* ==========================
+   HERO SECTION
+========================== */
+
+.hero {
+    height: 88vh;
+    min-height: 620px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 9%;
+
+    background-image: url("images/hero-fleet.png");
+
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.90) 0%,
+        rgba(0, 0, 0, 0.55) 45%,
+        rgba(0, 0, 0, 0.12) 100%
+    );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 650px;
+
+    animation: fadeUp 1.2s ease;
+}
+
+.hero-label {
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 4px;
+    margin-bottom: 30px;
+}
+
+.hero-label span {
+    display: inline-block;
+    width: 35px;
+    height: 1px;
+    background: var(--gold);
+    margin-right: 12px;
+    vertical-align: middle;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 6.5vw, 88px);
+    font-weight: 900;
+    line-height: 1.02;
+    letter-spacing: -3px;
+}
+
+.hero h1 span {
+    color: var(--gold);
+}
+
+.hero p {
+    max-width: 430px;
+    margin-top: 30px;
+
+    font-size: 15px;
+    line-height: 1.9;
+
+    color: #cccccc;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 35px;
+    flex-wrap: wrap;
+}
+
+.gold-btn,
+.outline-btn {
+    padding: 17px 28px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+
+    transition: 0.3s;
+}
+
+.gold-btn {
+    background: var(--gold);
+    color: #080808;
+}
+
+.gold-btn:hover {
+    background: #f0d17d;
+    transform: translateY(-3px);
+}
+
+.outline-btn {
+    border: 1px solid #ffffff;
+    color: white;
+}
+
+.outline-btn:hover {
+    background: white;
+    color: black;
+}
+
+.hero-bottom {
+    position: absolute;
+    z-index: 2;
+
+    bottom: 30px;
+    left: 9%;
+    right: 9%;
+
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: #dddddd;
+}
+
+
+/* ==========================
+   FLEET SECTION
+========================== */
+
+.fleet-section {
+    padding: 110px 9%;
+    background: #101010;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.gold-label {
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: 4px;
+}
+
+.section-heading h2 {
+    font-size: 48px;
+    margin: 18px 0;
+    letter-spacing: 2px;
+}
+
+.section-heading h2 span {
+    color: var(--gold);
+}
+
+.section-heading p {
+    color: var(--grey);
+    font-size: 13px;
+}
+
+.fleet-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.vehicle-card {
+    background: #191919;
+    transition: 0.4s;
+}
+
+.vehicle-card:hover {
+    transform: translateY(-7px);
+}
+
+.vehicle-image {
+    height: 270px;
+    position: relative;
+    overflow: hidden;
+}
+
+.vehicle-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.6s;
+}
+
+.vehicle-card:hover img {
+    transform: scale(1.05);
+}
+
+.vehicle-category {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+
+    background: var(--gold);
+    color: black;
+
+    padding: 9px 13px;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.vehicle-info {
+    padding: 25px;
+}
+
+.vehicle-info h3 {
+    font-size: 23px;
+    margin-bottom: 12px;
+}
+
+.vehicle-info p {
+    color: #999;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.vehicle-info a {
+    display: inline-block;
+    margin-top: 22px;
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+
+/* ==========================
+   TOURS
+========================== */
+
+.tours-section {
+    padding: 120px 7%;
+    text-align: center;
+
+    background:
+        linear-gradient(rgba(0,0,0,.78), rgba(0,0,0,.78)),
+        url("images/hero-fleet.png") center/cover;
+}
+
+.tours-section h2,
+.about-section h2 {
+    font-size: clamp(35px, 5vw, 60px);
+    margin: 25px 0;
+    line-height: 1.2;
+}
+
+.tours-section h2 span,
+.about-section h2 span {
+    color: var(--gold);
+}
+
+.tours-section p,
+.about-section p {
+    color: #bbbbbb;
+    line-height: 1.9;
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+
+
+/* ==========================
+   SERVICES
+========================== */
+
+.services-section {
+    padding: 110px 9%;
+    background: #101010;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.service-card {
+    background: #191919;
+    padding: 35px;
+    border: 1px solid #292929;
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    border-color: var(--gold);
+}
+
+.service-card span {
+    color: var(--gold);
+    font-size: 14px;
+}
+
+.service-card h3 {
+    font-size: 17px;
+    margin: 22px 0 12px;
+}
+
+.service-card p {
+    font-size: 12px;
+    color: #999;
+    line-height: 1.8;
+}
+
+
+/* ==========================
+   ABOUT
+========================== */
+
+.about-section {
+    padding: 110px 9%;
+    text-align: center;
+}
+
+
+/* ==========================
+   FOOTER
+========================== */
+
+footer {
+    background: #111;
+    padding: 75px 9% 25px;
+    text-align: center;
+}
+
+footer h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+footer p {
+    color: #999;
+    margin-bottom: 30px;
+}
+
+.footer-bottom {
+    border-top: 1px solid #292929;
+    padding-top: 25px;
+    margin-top: 70px;
+    color: #777;
+    font-size: 11px;
+}
+
+
+/* ==========================
+   ANIMATION
+========================== */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ==========================
+   MOBILE RESPONSIVENESS
+========================== */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        padding: 0 5%;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .nav-links a {
+        font-size: 9px;
+    }
+
+    .reserve-btn {
+        padding: 11px;
+        font-size: 9px;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .navbar {
+        height: 75px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+
+        flex-direction: column;
+        background: #101010;
+        padding: 25px;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .reserve-btn {
+        display: none;
+    }
+
+    .hero {
+        height: 80vh;
+        min-height: 600px;
+        padding: 0 7%;
+        background-position: center;
+    }
+
+    .hero h1 {
+        font-size: 46px;
+        letter-spacing: -1px;
+    }
+
+    .hero-label {
+        font-size: 9px;
+        letter-spacing: 2px;
+    }
+
+    .hero p {
+        font-size: 13px;
+    }
+
+    .hero-bottom {
+        left: 7%;
+        right: 7%;
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    .fleet-section,
+    .services-section {
+        padding: 75px 7%;
+    }
+
+    .fleet-grid,
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading h2 {
+        font-size: 36px;
+    }
+
+    .vehicle-image {
+        height: 230px;
+    }
+
+    .tours-section,
+    .about-section {
+        padding: 80px 7%;
+    }
+
+    footer h2 {
+        font-size: 25px;
+    }
+}
+
+
+/* ==========================
+   SCROLL VEHICLE ANIMATION
+========================== */
+
+.drive-scroll {
+    height: 260vh;
+    position: relative;
+    background: #080808;
+}
+
+.drive-sticky {
+    height: 100vh;
+    height: 100svh;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+    background: #080808;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#driveCanvas {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.drive-heading {
+    position: absolute;
+    z-index: 2;
+    top: 9%;
+    left: 9%;
+    pointer-events: none;
+}
+
+.drive-heading span {
+    color: #D6B45C;
+    font-size: 10px;
+    letter-spacing: 4px;
+}
+
+.drive-heading h2 {
+    margin-top: 12px;
+    font-size: clamp(25px, 4vw, 48px);
+    letter-spacing: 2px;
+    color: white;
+}
+
+.drive-caption {
+    position: absolute;
+    bottom: 35px;
+    left: 9%;
+    right: 9%;
+
+    display: flex;
+    justify-content: space-between;
+
+    color: #D6B45C;
+    font-size: 10px;
+    letter-spacing: 3px;
+    pointer-events: none;
+}
+
+@media (max-width: 650px) {
+
+    .drive-scroll {
+        height: 220vh;
+    }
+
+    .drive-heading {
+        top: 12%;
+        left: 6%;
+    }
+
+    .drive-heading h2 {
+        font-size: 24px;
+    }
+
+    #driveCanvas {
+        width: 100%;
+        height: auto;
+        max-height: 65%;
+    }
+
+    .drive-caption {
+        left: 6%;
+        right: 6%;
+        bottom: 25px;
+        font-size: 8px;
+    }
+
+}
+
+
+/* ======================================
+   URBANDRIVE - VEHICLE DETAILS PAGE
+====================================== */
+
+.vehicle-page {
+    margin: 0;
+    background: #080808;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+/* NAVIGATION */
+
+.vehicle-navbar {
+    height: 85px;
+    padding: 0 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #090909;
+    border-bottom: 1px solid #252525;
+}
+
+.vehicle-navbar .logo {
+    color: #d6b45c;
+    font-size: 23px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    text-decoration: none;
+}
+
+.vehicle-navbar .logo span {
+    color: #fff;
+}
+
+.back-button {
+    color: #d6b45c;
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+
+/* HERO */
+
+.vehicle-hero {
+    height: 75vh;
+    min-height: 480px;
+    position: relative;
+    overflow: hidden;
+}
+
+.vehicle-hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    animation: vehicleReveal 1.2s ease;
+}
+
+.vehicle-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.90),
+            rgba(0,0,0,.15)
+        ),
+        linear-gradient(
+            0deg,
+            rgba(0,0,0,.75),
+            transparent
+        );
+}
+
+.vehicle-hero-content {
+    position: absolute;
+    left: 9%;
+    bottom: 16%;
+    z-index: 2;
+    animation: contentReveal 1s ease;
+}
+
+.vehicle-hero-content span,
+.vehicle-heading > span,
+.driver-heading > span,
+.vehicle-features > span {
+    color: #d6b45c;
+    font-size: 11px;
+    letter-spacing: 4px;
+}
+
+.vehicle-hero-content h1 {
+    font-size: clamp(42px, 7vw, 85px);
+    margin: 20px 0;
+    font-weight: 900;
+}
+
+.vehicle-hero-content p {
+    color: #ccc;
+    font-size: 15px;
+}
+
+
+/* MAIN INFORMATION */
+
+.vehicle-information {
+    padding: 100px 9%;
+}
+
+.vehicle-heading h2,
+.driver-heading h2 {
+    font-size: clamp(35px, 5vw, 60px);
+    line-height: 1.15;
+    margin: 20px 0 50px;
+}
+
+.vehicle-heading strong,
+.driver-heading strong {
+    color: #d6b45c;
+}
+
+
+/* SPECIFICATIONS */
+
+.specification-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border: 1px solid #333;
+}
+
+.specification-card {
+    padding: 35px 25px;
+    border-right: 1px solid #333;
+    transition: background .3s ease;
+}
+
+.specification-card:last-child {
+    border-right: none;
+}
+
+.specification-card:hover {
+    background: #151515;
+}
+
+.specification-card span {
+    color: #d6b45c;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.specification-card h3 {
+    font-size: 26px;
+    margin: 22px 0 5px;
+}
+
+.specification-card p {
+    color: #999;
+    font-size: 12px;
+}
+
+
+/* PRICE */
+
+.vehicle-price-section {
+    margin-top: 60px;
+    padding: 40px;
+    background: #111;
+    border: 1px solid #40351d;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+}
+
+.vehicle-price-section span {
+    color: #d6b45c;
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+.vehicle-price-section h2 {
+    font-size: 45px;
+    margin: 15px 0 5px;
+}
+
+.vehicle-price-section p {
+    color: #999;
+    font-size: 13px;
+}
+
+.price-note {
+    max-width: 300px;
+}
+
+
+/* DRIVER */
+
+.driver-section {
+    margin-top: 110px;
+}
+
+.driver-card {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    padding: 40px;
+    background: #111;
+    border: 1px solid #333;
+}
+
+.driver-avatar {
+    width: 110px;
+    height: 110px;
+    flex-shrink: 0;
+    border: 1px solid #d6b45c;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: #d6b45c;
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.driver-information > span {
+    color: #d6b45c;
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.driver-information h3 {
+    font-size: 25px;
+    margin: 12px 0;
+}
+
+.driver-information p {
+    color: #999;
+    font-size: 13px;
+}
+
+.driver-phone {
+    display: inline-block;
+    margin-top: 12px;
+    color: #d6b45c;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+
+/* FEATURES */
+
+.vehicle-features {
+    margin-top: 110px;
+}
+
+.vehicle-features h2 {
+    font-size: 35px;
+    margin: 20px 0 35px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.feature-item {
+    padding: 23px;
+    background: #111;
+    border: 1px solid #292929;
+    color: #ccc;
+    font-size: 13px;
+}
+
+.feature-item span {
+    color: #d6b45c;
+    margin-right: 12px;
+}
+
+
+/* BOOKING */
+
+.vehicle-booking {
+    margin-top: 110px;
+    padding: 55px 40px;
+    border: 1px solid #554525;
+    background: linear-gradient(120deg, #17130b, #0b0b0b);
+}
+
+.vehicle-booking > div > span {
+    color: #d6b45c;
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.vehicle-booking h2 {
+    font-size: clamp(28px, 4vw, 45px);
+    margin: 20px 0;
+}
+
+.vehicle-booking p {
+    color: #aaa;
+    font-size: 13px;
+    margin-bottom: 30px;
+}
+
+.vehicle-gold-btn,
+.vehicle-outline-btn {
+    display: inline-block;
+    padding: 16px 23px;
+    margin: 5px 10px 5px 0;
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    transition: .3s ease;
+}
+
+.vehicle-gold-btn {
+    color: #111;
+    background: #d6b45c;
+}
+
+.vehicle-gold-btn:hover {
+    background: #fff;
+}
+
+.vehicle-outline-btn {
+    border: 1px solid #d6b45c;
+    color: #d6b45c;
+}
+
+.vehicle-outline-btn:hover {
+    background: #d6b45c;
+    color: #111;
+}
+
+
+/* ERROR MESSAGE */
+
+.vehicle-not-found,
+.loading-message {
+    padding: 100px 9%;
+    min-height: 300px;
+}
+
+.vehicle-not-found h1 {
+    color: #d6b45c;
+}
+
+
+/* ANIMATIONS */
+
+@keyframes vehicleReveal {
+    from {
+        opacity: 0;
+        transform: scale(1.08);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes contentReveal {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width: 800px) {
+
+    .specification-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .specification-card:nth-child(2) {
+        border-right: none;
+    }
+
+    .specification-card:nth-child(-n+2) {
+        border-bottom: 1px solid #333;
+    }
+
+}
+
+@media(max-width: 550px) {
+
+    .vehicle-navbar {
+        padding: 0 5%;
+        height: 70px;
+    }
+
+    .vehicle-navbar .logo {
+        font-size: 17px;
+    }
+
+    .back-button {
+        font-size: 9px;
+    }
+
+    .vehicle-hero {
+        height: 65vh;
+        min-height: 420px;
+    }
+
+    .vehicle-hero-content {
+        left: 6%;
+        right: 6%;
+    }
+
+    .vehicle-hero-content h1 {
+        font-size: 40px;
+    }
+
+    .vehicle-information {
+        padding: 70px 6%;
+    }
+
+    .specification-card {
+        padding: 25px 15px;
+    }
+
+    .specification-card h3 {
+        font-size: 21px;
+    }
+
+    .vehicle-price-section {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 25px;
+    }
+
+    .driver-card {
+        padding: 25px 18px;
+        gap: 18px;
+    }
+
+    .driver-avatar {
+        width: 65px;
+        height: 65px;
+        font-size: 19px;
+    }
+
+    .driver-information h3 {
+        font-size: 19px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .vehicle-booking {
+        padding: 35px 22px;
+    }
+
+}
+
+
+/* ======================================
+   URBANDRIVE - CINEMATIC COLLECTION
+====================================== */
+
+.collection-hero {
+    position: relative;
+    padding: 65px 7% 75px;
+    background: #080808;
+    overflow: hidden;
+}
+
+.collection-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(
+            circle at 80% 10%,
+            rgba(214,180,92,.13),
+            transparent 45%
+        );
+    pointer-events: none;
+}
+
+.collection-content {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 38px;
+}
+
+.collection-content .gold-label {
+    color: #d6b45c;
+    font-size: 10px;
+    letter-spacing: 4px;
+}
+
+.collection-content h1 {
+    font-size: clamp(40px, 7vw, 76px);
+    line-height: .98;
+    font-weight: 900;
+    margin: 20px 0;
+}
+
+.collection-content h1 strong {
+    color: #d6b45c;
+}
+
+.collection-content p {
+    color: #aaa;
+    font-size: 14px;
+}
+
+.collection-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+}
+
+.collection-card {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+    border: 1px solid #30291d;
+    border-radius: 7px;
+    background: #151515;
+}
+
+.collection-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .7s ease;
+}
+
+.collection-card:hover img {
+    transform: scale(1.08);
+}
+
+.collection-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,.95),
+        transparent 70%
+    );
+}
+
+.collection-card-info {
+    position: absolute;
+    z-index: 2;
+    left: 15px;
+    right: 10px;
+    bottom: 17px;
+}
+
+.collection-card-info span {
+    color: #d6b45c;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.collection-card-info h3 {
+    color: white;
+    font-size: 15px;
+    margin: 8px 0 0;
+}
+
+
+/* VEHICLE GALLERY */
+
+.vehicle-gallery-section {
+    padding: 85px 7%;
+    background: #0d0d0d;
+}
+
+.vehicle-gallery-section .vehicle-heading {
+    margin-bottom: 35px;
+}
+
+.vehicle-gallery {
+    position: relative;
+}
+
+.gallery-main {
+    height: 540px;
+    overflow: hidden;
+    background: #151515;
+    border: 1px solid #30291d;
+}
+
+.gallery-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: opacity .2s ease;
+}
+
+.gallery-thumbnails {
+    display: flex;
+    gap: 12px;
+    margin-top: 18px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+}
+
+.gallery-thumb {
+    flex: 0 0 115px;
+    height: 80px;
+    padding: 0;
+    border: 1px solid #333;
+    background: #111;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.gallery-thumb.active {
+    border: 2px solid #d6b45c;
+}
+
+.gallery-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery-counter {
+    display: block;
+    margin-top: 15px;
+    color: #888;
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+#galleryCurrent {
+    color: #d6b45c;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+    .collection-hero {
+        padding: 42px 6% 55px;
+    }
+
+    .collection-content {
+        margin-bottom: 28px;
+    }
+
+    .collection-content h1 {
+        font-size: 42px;
+    }
+
+    .collection-content p {
+        max-width: 280px;
+        line-height: 1.6;
+    }
+
+    .collection-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 11px;
+    }
+
+    .collection-card {
+        height: 220px;
+    }
+
+    .collection-card-info {
+        left: 10px;
+        bottom: 12px;
+    }
+
+    .collection-card-info h3 {
+        font-size: 12px;
+    }
+
+    .collection-card-info span {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    .vehicle-gallery-section {
+        padding: 60px 6%;
+    }
+
+    .gallery-main {
+        height: 300px;
+    }
+
+    .gallery-thumb {
+        flex-basis: 85px;
+        height: 65px;
+    }
+
+}
+
+
+/* ======================================
+   MULTI VEHICLE SHOWROOM
+====================================== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+.vehicle-gallery-section {
+    scroll-margin-top: 25px;
+}
+
+/* Make collection cards clickable */
+
+.collection-card {
+    display: block;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+.collection-card-info small {
+    display: inline-block;
+    margin-top: 10px;
+    color: #d6b45c;
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+/* Vehicle gallery sections */
+
+.all-vehicle-galleries {
+    background: #080808;
+}
+
+.all-vehicle-galleries .vehicle-gallery-section {
+    padding: 75px 7%;
+    border-bottom: 1px solid #242424;
+}
+
+.all-vehicle-galleries .vehicle-heading p {
+    color: #999;
+    font-size: 13px;
+    line-height: 1.7;
+    margin-top: 15px;
+}
+
+.main-gallery-image {
+    transition: opacity .2s ease;
+}
+
+/* Mobile */
+
+@media (max-width: 650px) {
+
+    .collection-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .collection-card {
+        height: 220px;
+    }
+
+    .collection-card-info small {
+        font-size: 8px;
+    }
+
+    .all-vehicle-galleries .vehicle-gallery-section {
+        padding: 55px 6%;
+    }
+
+}
+
